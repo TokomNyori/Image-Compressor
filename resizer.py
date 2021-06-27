@@ -2,7 +2,7 @@ from PIL import Image
 import os
 from sys import exit
 
-x = 55
+x = 533
 
 # This function resizes images and also maintains the aspect ratio
 def resizer(img, new_width):
