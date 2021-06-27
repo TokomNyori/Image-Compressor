@@ -2,6 +2,8 @@ from PIL import Image
 import os
 from sys import exit
 
+x = 51
+
 # This function resizes images and also maintains the aspect ratio
 def resizer(img, new_width):
     width, height = img.size
@@ -27,7 +29,7 @@ for i in img_list:
         print('Valid image extension')
     else:
         print('Invalid image extension')
-        exit()    
+        exit()
 
 # Prompt users to enter desired width
 img_width = int(input('Enter your desired width for resizing: '))
@@ -40,4 +42,3 @@ for i in img_list:
     # Saves the copies of resized images to a new folder
     resized_image = resizer(image, img_width) # Calls the resizer function for resizing
     resized_image.save(f'F:/python_projects/Image-Compressor/resized_images/{i}') # Saves the image using absolute file path
-    
