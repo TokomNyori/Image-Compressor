@@ -16,9 +16,9 @@ img_extns = ['jpg', 'jpeg', 'png', 'gif', 'bmp']
 # Changing directory
 os.chdir('images/')
 
+
 # Saving images into a list
 img_list = os.listdir()
-del img_list[-1]
 
 # Verifies the images
 for i in img_list:
@@ -29,28 +29,15 @@ for i in img_list:
         print('Invalid image extension')
         exit()    
 
-counter = 0
+
+img_width = int(input('Enter your desired width for resizing: '))
 
 # Loops the images for resizing and saving
 for i in img_list:
-    img_name = i.split('.')
-    if img_name[0] == 'facade':
-        # Opens the facade image
-        image = Image.open(i)
+    # Opens the facade image
+    image = Image.open(i)
 
-        # Saves a copy of facade image into 640px
-        resized_image = resizer(image, 640) # Calls the resizer function for resizing
-        resized_image.save(f'resized_images/facade_sm.{img_name[-1]}') # Saves the image
-
-        # Saves a copy of facade image into 1920px
-        resized_image = resizer(image, 1920)
-        resized_image.save(f'resized_images/facade_lg.{img_name[-1]}')
-    else:
-        # Opens the facade image
-        image = Image.open(i)
-
-        # Saves the interior images into 1920px
-        resized_image = resizer(image, 1280)
-        resized_image.save(f'resized_images/interior-{counter}.{img_name[-1]}')
-
-    counter += 1 # Increements the counter variable by one  
+    # Saves the copies of resized images to a new folder
+    resized_image = resizer(image, img_width) # Calls the resizer function for resizing
+    resized_image.save(f'F:/python_projects/Image-Compressor/resized_images/{i}') # Saves the image using absolute file path
+    
