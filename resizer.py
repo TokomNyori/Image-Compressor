@@ -29,7 +29,7 @@ for i in img_list:
         print('Invalid image extension')
         exit()    
 
-
+# Prompt users to enter desired width
 img_width = int(input('Enter your desired width for resizing: '))
 
 # Loops the images for resizing and saving
