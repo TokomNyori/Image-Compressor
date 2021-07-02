@@ -2,7 +2,9 @@ from PIL import Image
 import os
 from sys import exit
 
-x = 533
+#just a function for jun
+def infos(i):
+    print(f'Successfully resized and saved {i}')
 
 # This function resizes images and also maintains the aspect ratio
 def resizer(img, new_width):
@@ -42,3 +44,4 @@ for i in img_list:
     # Saves the copies of resized images to a new folder
     resized_image = resizer(image, img_width) # Calls the resizer function for resizing
     resized_image.save(f'F:/python_projects/Image-Compressor/resized_images/{i}') # Saves the image using absolute file path
+    infos(i)
